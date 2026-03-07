@@ -65,7 +65,7 @@ export default function Differentials() {
               className="mt-6 text-lg text-white/70 leading-relaxed"
             >
               Na Servy Tecnologia, cada projeto é tratado com dedicação exclusiva. 
-              Combinamos expertise técnica com um atendimento humanizado para 
+              Combinamos expertise técnica com um atendimento humano para 
               entregar resultados que superam expectativas.
             </motion.p>
 

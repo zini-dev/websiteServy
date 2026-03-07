@@ -22,8 +22,8 @@ export default function About() {
             </div>
             {/* Floating Card */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
-              <div className="text-4xl font-bold text-[#141444]">5+</div>
-              <div className="text-gray-600 mt-1">Anos criando soluções digitais de excelência</div>
+              <div className="text-4xl font-bold text-[#141444]">100%</div>
+              <div className="text-gray-600 mt-1">Soluções desenvolvidas para cada necessidade.</div>
             </div>
           </motion.div>
 

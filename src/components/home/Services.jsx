@@ -6,7 +6,7 @@ const services = [
   {
     icon: Globe,
     title: 'Criação de Sites',
-    description: 'Sites modernos, responsivos e otimizados para SEO que destacam sua marca na internet.',
+    description: 'Seu site é a porta de entrada da sua empresa na internet. Criamos sites modernos, rápidos e pensados para transformar visitantes em clientes.',
     features: ['Design Personalizado', 'Mobile First', 'Alta Performance'],
   },
   {
@@ -18,13 +18,13 @@ const services = [
   {
     icon: Smartphone,
     title: 'Aplicativos Mobile',
-    description: 'Apps nativos e híbridos para iOS e Android com experiência de usuário excepcional.',
+    description: 'Leve sua empresa para o celular dos seus clientes. Criamos aplicativos modernos que facilitam o atendimento e aproximam sua marca do público.',
     features: ['iOS & Android', 'UI/UX Premium', 'Push Notifications'],
   },
   {
     icon: Code2,
     title: 'Soluções Sob Medida',
-    description: 'Desenvolvemos soluções personalizadas para atender às necessidades específicas do seu negócio.',
+    description: 'Cada empresa tem necessidades diferentes. Criamos soluções tecnológicas personalizadas para resolver problemas reais e impulsionar seu crescimento.',
     features: ['APIs', 'Automações', 'Consultoria'],
   },
 ];
@@ -44,25 +44,39 @@ const cardFadeUp = {
 function ServiceCard({ service, index }) {
   const Icon = service.icon;
 
+  const scrollToContact = () => {
+    const section = document.getElementById('contato');
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <m.article
       {...cardFadeUp}
       transition={{ duration: 0.45, delay: index * 0.08 }}
+      onClick={scrollToContact}
       className="group relative bg-slate-50 hover:bg-[#141444] rounded-3xl p-8 md:p-10 transition-all duration-500 cursor-pointer overflow-hidden"
     >
-      {/* Background Gradient on Hover */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-[#141444] to-[#1a1a5e] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative z-10">
+
         {/* Icon */}
         <div className="w-14 h-14 bg-[#141444] group-hover:bg-white/10 rounded-2xl flex items-center justify-center transition-colors duration-500">
-          <Icon className="w-7 h-7 text-white" aria-hidden="true" />
+          <Icon className="w-7 h-7 text-white" />
         </div>
 
-        {/* Content */}
+        {/* Title */}
         <h3 className="mt-6 text-2xl font-semibold text-[#141444] group-hover:text-white transition-colors duration-500">
           {service.title}
         </h3>
+
+        {/* Description */}
         <p className="mt-3 text-gray-600 group-hover:text-white/80 transition-colors duration-500 leading-relaxed">
           {service.description}
         </p>
@@ -79,14 +93,14 @@ function ServiceCard({ service, index }) {
           ))}
         </div>
 
-        {/* Arrow */}
+        {/* CTA */}
         <div className="mt-8 flex items-center gap-2 text-[#141444] group-hover:text-white transition-colors duration-500">
-          <span className="text-sm font-medium">Saiba mais</span>
+          <span className="text-sm font-medium">Quero esse serviço</span>
           <ArrowUpRight
             className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-            aria-hidden="true"
           />
         </div>
+
       </div>
     </m.article>
   );
@@ -97,8 +111,10 @@ export default function Services() {
     <LazyMotion features={domAnimation}>
       <section id="serviços" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Section Header */}
+
+          {/* Header */}
           <div className="max-w-3xl">
+
             <m.span
               {...fadeUp}
               transition={{ duration: 0.4 }}
@@ -116,14 +132,20 @@ export default function Services() {
               <br />
               sua presença digital
             </m.h2>
+
           </div>
 
-          {/* Services Grid */}
+          {/* Grid */}
           <div className="mt-16 grid md:grid-cols-2 gap-6">
             {services.map((service, index) => (
-              <ServiceCard key={service.title} service={service} index={index} />
+              <ServiceCard
+                key={service.title}
+                service={service}
+                index={index}
+              />
             ))}
           </div>
+
         </div>
       </section>
     </LazyMotion>

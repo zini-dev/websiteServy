@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#141444]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#141444]/5 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#141444]/3 to-transparent rounded-full blur-3xl" />
-        
+
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(20,20,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(20,20,68,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
@@ -26,7 +26,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-[#141444]/5 border border-[#141444]/10 rounded-full px-4 py-2 mb-8"
           >
             <Sparkles className="w-4 h-4 text-[#141444]" />
-            <span className="text-sm font-medium text-[#141444]">Transformando ideias em realidade digital</span>
+            <span className="text-sm font-medium text-[#141444]">Transformando ideias em realidade</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -52,8 +52,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-8 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
-            Desenvolvemos soluções digitais sob medida com foco em qualidade, 
-            confiança e facilidade de uso. Sites, sistemas e aplicativos que 
+            Desenvolvemos soluções digitais sob medida com foco em qualidade,
+            confiança e facilidade de uso. Sites, sistemas e aplicativos que
             fazem a diferença.
           </motion.p>
 
@@ -64,19 +64,21 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button 
+            <Button
               size="lg"
+              onClick={() => window.open("https://wa.me/5519992163206?text=Olá%20vim%20pelo%20site%20da%20Servy%20Tecnologia%20e%20gostaria%20de%20um%20orçamento", "_blank")}
               className="bg-[#141444] hover:bg-[#141444]/90 text-white rounded-full px-8 h-14 text-base font-medium shadow-xl shadow-[#141444]/20 transition-all hover:shadow-2xl hover:shadow-[#141444]/30 hover:scale-105"
             >
               Solicitar Orçamento
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button 
+            <Button
               variant="outline"
               size="lg"
+              onClick={() => document.getElementById("serviços").scrollIntoView({ behavior: "smooth" })}
               className="border-[#141444]/20 text-[#141444] hover:bg-[#141444]/5 rounded-full px-8 h-14 text-base font-medium"
             >
-              Ver Nossos Serviços
+              Ver Nossas Soluções
             </Button>
           </motion.div>
 
@@ -88,9 +90,9 @@ export default function Hero() {
             className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             {[
-              { value: '50+', label: 'Projetos Entregues' },
-              { value: '100%', label: 'Clientes Satisfeitos' },
-              { value: '5+', label: 'Anos de Experiência' },
+              { value: '24/7', label: 'Tecnologia trabalhando por você' },
+              { value: '100%', label: 'Projetos personalizados' },
+              { value: '∞', label: 'Possibilidades com tecnologia' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-[#141444]">{stat.value}</div>
