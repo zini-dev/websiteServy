@@ -86,7 +86,7 @@ export default function Footer() {
 
                 <li className="flex items-center gap-3 text-white/60 text-sm">
                   <Phone className="w-4 h-4" />
-                  (19) 99216-3206
+                  (19) 99518-5731
                 </li>
 
                 <li className="flex items-start gap-3 text-white/60 text-sm">

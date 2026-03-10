@@ -66,7 +66,7 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              onClick={() => window.open("https://wa.me/5519992163206?text=Olá%20vim%20pelo%20site%20da%20Servy%20Tecnologia%20e%20gostaria%20de%20um%20orçamento", "_blank")}
+              onClick={() => window.open("https://wa.me/5519995185731?text=Olá%20vim%20pelo%20site%20da%20Servy%20Tecnologia%20e%20gostaria%20de%20um%20orçamento", "_blank")}
               className="bg-[#141444] hover:bg-[#141444]/90 text-white rounded-full px-8 h-14 text-base font-medium shadow-xl shadow-[#141444]/20 transition-all hover:shadow-2xl hover:shadow-[#141444]/30 hover:scale-105"
             >
               Solicitar Orçamento

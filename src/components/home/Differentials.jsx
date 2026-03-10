@@ -27,57 +27,67 @@ const differentials = [
 
 export default function Differentials() {
   return (
-    <section id="diferenciais" className="py-32 bg-[#141444] relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+    <section id="diferenciais" className="py-28 bg-[#141444] relative overflow-hidden">
+
+      {/* Background Elements (otimizados) */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-2xl" />
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-white/5 rounded-full blur-2xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+
           {/* Left Content */}
           <div>
             <motion.span
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
               className="text-sm font-semibold text-white/60 tracking-wider uppercase"
             >
               Por que nos escolher
             </motion.span>
+
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
               className="mt-4 text-4xl md:text-5xl font-bold text-white tracking-tight"
             >
               Nossos pilares são
               <br />
               <span className="text-white/50">o seu sucesso</span>
             </motion.h2>
+
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
               className="mt-6 text-lg text-white/70 leading-relaxed"
             >
-              Na Servy Tecnologia, cada projeto é tratado com dedicação exclusiva. 
-              Combinamos expertise técnica com um atendimento humano para 
+              Na Servy Tecnologia, cada projeto é tratado com dedicação exclusiva.
+              Combinamos expertise técnica com um atendimento humano para
               entregar resultados que superam expectativas.
             </motion.p>
 
             {/* Checklist */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
               className="mt-8 space-y-4"
             >
-              {['Projetos entregues no prazo', 'Código documentado e organizado', 'Treinamento incluso', 'Garantia pós-entrega'].map((item, i) => (
+              {[
+                'Projetos entregues no prazo',
+                'Código documentado e organizado',
+                'Treinamento incluso',
+                'Garantia pós-entrega'
+              ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-emerald-400" />
                   <span className="text-white/90">{item}</span>
@@ -87,28 +97,31 @@ export default function Differentials() {
           </div>
 
           {/* Right Content - Cards */}
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-5">
             {differentials.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors duration-300"
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition duration-300"
               >
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
+
                 <h3 className="mt-4 text-lg font-semibold text-white">
                   {item.title}
                 </h3>
+
                 <p className="mt-2 text-sm text-white/60 leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

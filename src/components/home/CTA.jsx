@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function CTA() {
 
-  const whatsappLink = "https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20da%20Servy%20Tecnologia%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
+  const whatsappLink = "https://wa.me/5519995185731?text=Olá!%20Vim%20pelo%20site%20da%20Servy%20Tecnologia%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
 
   const openWhatsApp = () => {
     window.open(whatsappLink, "_blank");

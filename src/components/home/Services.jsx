@@ -30,15 +30,9 @@ const services = [
 ];
 
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 12 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.2 },
-};
-
-const cardFadeUp = {
-  initial: { opacity: 0, y: 28 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.15 },
 };
 
 function ServiceCard({ service, index }) {
@@ -46,38 +40,35 @@ function ServiceCard({ service, index }) {
 
   const scrollToContact = () => {
     const section = document.getElementById('contato');
-
     if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-      });
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <m.article
-      {...cardFadeUp}
-      transition={{ duration: 0.45, delay: index * 0.08 }}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.35, delay: index * 0.06 }}
       onClick={scrollToContact}
-      className="group relative bg-slate-50 hover:bg-[#141444] rounded-3xl p-8 md:p-10 transition-all duration-500 cursor-pointer overflow-hidden"
+      className="group relative bg-slate-50 hover:bg-[#141444] rounded-3xl p-8 md:p-10 cursor-pointer overflow-hidden transition-colors duration-300"
+      style={{ willChange: "transform" }}
     >
-
-      <div className="absolute inset-0 bg-gradient-to-br from-[#141444] to-[#1a1a5e] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
       <div className="relative z-10">
 
         {/* Icon */}
-        <div className="w-14 h-14 bg-[#141444] group-hover:bg-white/10 rounded-2xl flex items-center justify-center transition-colors duration-500">
+        <div className="w-14 h-14 bg-[#141444] group-hover:bg-white/10 rounded-2xl flex items-center justify-center transition-colors duration-300">
           <Icon className="w-7 h-7 text-white" />
         </div>
 
         {/* Title */}
-        <h3 className="mt-6 text-2xl font-semibold text-[#141444] group-hover:text-white transition-colors duration-500">
+        <h3 className="mt-6 text-2xl font-semibold text-[#141444] group-hover:text-white transition-colors duration-300">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="mt-3 text-gray-600 group-hover:text-white/80 transition-colors duration-500 leading-relaxed">
+        <p className="mt-3 text-gray-600 group-hover:text-white/80 transition-colors duration-300 leading-relaxed">
           {service.description}
         </p>
 
@@ -86,7 +77,7 @@ function ServiceCard({ service, index }) {
           {service.features.map((feature) => (
             <span
               key={feature}
-              className="px-3 py-1 bg-[#141444]/10 group-hover:bg-white/10 text-[#141444] group-hover:text-white text-sm rounded-full transition-colors duration-500"
+              className="px-3 py-1 bg-[#141444]/10 group-hover:bg-white/10 text-[#141444] group-hover:text-white text-sm rounded-full transition-colors duration-300"
             >
               {feature}
             </span>
@@ -94,10 +85,10 @@ function ServiceCard({ service, index }) {
         </div>
 
         {/* CTA */}
-        <div className="mt-8 flex items-center gap-2 text-[#141444] group-hover:text-white transition-colors duration-500">
+        <div className="mt-8 flex items-center gap-2 text-[#141444] group-hover:text-white transition-colors duration-300">
           <span className="text-sm font-medium">Quero esse serviço</span>
           <ArrowUpRight
-            className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+            className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
           />
         </div>
 
@@ -117,7 +108,7 @@ export default function Services() {
 
             <m.span
               {...fadeUp}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.35 }}
               className="text-sm font-semibold text-[#141444]/60 tracking-wider uppercase"
             >
               Nossos Serviços
@@ -125,7 +116,7 @@ export default function Services() {
 
             <m.h2
               {...fadeUp}
-              transition={{ duration: 0.45, delay: 0.08 }}
+              transition={{ duration: 0.35, delay: 0.06 }}
               className="mt-4 text-4xl md:text-5xl font-bold text-[#141444] tracking-tight"
             >
               Soluções completas para
